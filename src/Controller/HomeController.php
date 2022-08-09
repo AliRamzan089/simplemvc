@@ -9,6 +9,10 @@
 
 namespace App\Controller;
 
+use App\Model\ArticleManager;
+use App\Service\LoginService;
+use App\Model\UserManager;
+
 class HomeController extends AbstractController
 {
     /**
@@ -21,6 +25,8 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $articleManager = new ArticleManager();
+        $articles = $articleManager->selectAll();
+        return $this->twig->render('Home/index.html.twig',['articles' => $articles]);
     }
 }

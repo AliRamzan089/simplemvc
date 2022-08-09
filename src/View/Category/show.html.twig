@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+{% block title %} {{ category.name }} Category | Admin Muxu{% endblock %}
+{% block content %}
+<div class="card m-auto">
+    <div class="card-body">
+        <h1>Category</h1>
+        <h5 class="card-title">{{ category.name }}</h5>
+    </div>
+    <div class="card-footer text-center">
+        <a href="/category/index" class="btn btn-sm my-2 back-color"><i class="fas fa-list"></i> Back to the list</a>
+        <a href="/category/edit/{{ category.id }}" class="btn btn-sm my-2 edit-color"><i class="fas fa-edit logo-edit"></i></a>
+    </div>
+</div>
+{% endblock %}

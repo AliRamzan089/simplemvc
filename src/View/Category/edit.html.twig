@@ -1,0 +1,8 @@
+{% extends 'layout.html.twig' %}
+{% block title %}Edit {{ category.name }} | Admin Muxu{% endblock %}
+{% block content %}
+    <h1>Edit category {{ category.name }}</h1>
+    {% include 'Category/_form.html.twig' %}
+    <a href="/category/index" class="btn btn-sm my-2 back-color"><i class="fas fa-list"></i> Return to the list</a><br>
+    <a href="/category/show/{{ category.id }}" class="btn btn-sm my-2 back-color">Back</a>
+{% endblock %}

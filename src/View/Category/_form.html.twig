@@ -1,0 +1,12 @@
+<div class="container">
+<form method="post">
+    <input type="hidden" value="{{ categories.id }}" name="id">
+    <div class="form-group">
+        <label for="name">Manage Categories</label>
+        <input type="text" class="form-control" id="name" value="{{ category.name }}" name="name" required>
+    </div>
+    <div class="card-footer text-center">
+        <button type="submit" value="Valider" class="btn submit-color">Submit</button>
+    </div>
+</form>
+</div>

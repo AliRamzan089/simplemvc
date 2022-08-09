@@ -1,0 +1,14 @@
+body{
+    margin-bottom:200px;
+}
+.footer-blog{
+
+        position: absolute;
+        height: 50px;
+        background-color: red;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin-bottom: 0px;
+    
+  }

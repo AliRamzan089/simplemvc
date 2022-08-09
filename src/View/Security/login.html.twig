@@ -1,0 +1,81 @@
+{% extends 'layout.html.twig' %}
+{% block title %}
+	Login | MUXU
+{% endblock %}
+
+{% block content %}
+	<div class="container mt-5">
+		<div class="jumbotron my-5 text-black menu-account-bg">
+			{% if session.flash_message is not empty %}
+				{% for message in session.flash_message %}
+					<div class="col-12">
+						<div class="alert alert-danger alert-dismissible fade show" role="alert">
+							<strong>{{message}}</strong>
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close" id="clear_flash">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					</div>
+				{% endfor %}
+			{% endif %}
+			<h1 class="mb-5 text-center">Login</h1>
+			<div class="row">
+				<div class="col-lg-6 col-md-12 col-sm-12 m-auto">
+					<form method="POST">
+						<div class="form-group">
+							<label for="email" class="d-none">Email</label>
+							<div class="row">
+								<div class="col-lg-1 col-md-1 col-xs-1 text-center">
+									<i class="fas fa-user input-prefix"></i>
+								</div>
+								<div class="col-lg-11 col-md-11 col-xs-11">
+									<input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="password" class="d-none">Password</label>
+							<div class="row">
+								<div class="col-lg-1 col-md-1 col-xs-1 text-center">
+									<i class="fas fa-lock prefix"></i>
+								</div>
+								<div class="col-lg-11 col-md-11 col-xs-11">
+									<input type="password" class="form-control validate" id="password-field" name="password" placeholder="password" required>
+									 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+								</div>
+							</div>
+						</div>
+						<div class="">
+							<div class="text-center">
+								<button type="submit" class="btn button-color">SUBMIT</button>
+							</div>
+							<div class="text-left mt-4">
+								<p>Don't have an account yet?
+									<br>
+									Create one!</p>
+								<a class="btn button-register text-right" href="/security/register" role="button">REGISTER</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+{% block javascript %}
+<script>
+$(".toggle-password").click(function() {
+
+  $(this).toggleClass("fa-eye fa-eye-slash");
+  var input = $($(this).attr("toggle"));
+  if (input.attr("type") == "password") {
+    input.attr("type", "text");
+  } else {
+    input.attr("type", "password");
+  }
+});
+</script>
+{% endblock %}
+	{% block widget %}
+					
+					 {% endblock %}

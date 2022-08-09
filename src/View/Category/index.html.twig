@@ -1,0 +1,30 @@
+{% extends 'layout.html.twig' %}
+{% block title %}List Categories | Admin Muxu{% endblock %}
+{% block content %}
+<h1 class="display-4">Categories</h1>
+<div class="text-right my-3">
+    <a href="/category/add" class="btn btn-sm plus-color">Add a category <i class="fas fa-plus-circle"></i></a>
+</div>
+<table class="table table-responsive{-sm|-md|-lg|-xl} table-bg">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for category in categories %}
+        <tr>
+            <td>{{ category.name }}</td>
+            <td>
+                <a href="/category/show/{{ category.id }}" class="btn btn-sm my-2 eye-color"><i
+                        class="fas fa-eye logo-eye"></i></a>
+                <a href="/category/edit/{{ category.id }}" class="btn btn-sm my-2 edit-color"><i
+                        class="fas fa-edit logo-edit"></i></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
